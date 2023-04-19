@@ -1,0 +1,28 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {% block page_title %}My Store{% endblock %} </title></head>
+    <link rel="stylesheet" href="{% static "base.css" %}">
+    {% block css_files%}{%endblock%}
+<body>
+    {% comment %} <header id="upper-toolbar">
+        <nav id="main-toolbar">
+            <div>
+                {% if user.is_authenticated %}
+                    <a href="{% url "logout-page" %}">Logout</a>
+                {% else%}
+                    <a href="{% url "register-page" %}">Register</a>
+                    <a href="{% url "login-page" %}">Login</a>
+                {% endif %}
+            </div>
+        </nav>
+    </header> {% endcomment %}
+
+        {% block content %}{% endblock %}
+</body>
+</html>
