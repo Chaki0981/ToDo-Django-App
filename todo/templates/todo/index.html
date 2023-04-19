@@ -1,18 +1,33 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block css_files%}
+    <link rel="stylesheet" href="{% static "todo/index.css" %}">
+{% endblock %}
 
 {% block content %}
-    <form method="POST">
-        {% csrf_token %}
-        {{ form }}
-        <button>Add task</button>
-    </form>
-    <ul>
-    {% for task in tasks%}
-        <li>
-            <a href="{% url "complete-task-page" task.id %}">{{ task.task_text }}</a>
-            <a href="{% url "task-detail-page" task.id %}">Edit</a>
-            <a href="{% url "remove-task-page" task.id %}">Delete</a>
-        </li>
-    {% endfor %}
-    </ul>
+    <div class="main-box">
+        <nav>
+            <a href="{% url "starting-page" %}">Current tasks</a>
+            <a href="{% url "all-tasks-page" %}">All tasks</a>
+            <a href="{% url "archived-tasks-page" %}">Archive</a>
+        </nav>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form }}
+            <button>Add task</button>
+        </form>
+        <ul>
+        {% for task in tasks%}
+            <li>
+                <a href="{% url "complete-task-page" task.id %}">{{ task.task_text }}</a>
+                <div class="task-buttons">
+                    <a href="{% url "task-detail-page" task.id %}">Edit</a>
+                    <a href="{% url "move-to-archive-page" task.id%}">Archive</a>
+                    <a href="{% url "remove-task-page" task.id %}">Delete</a>
+                </div>
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
 {% endblock %}
