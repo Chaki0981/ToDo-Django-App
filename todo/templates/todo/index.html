@@ -7,20 +7,24 @@
 
 {% block content %}
     <div class="main-box">
-        <nav>
+        <nav class="navigation-bar">
             <a href="{% url "starting-page" %}">Current tasks</a>
             <a href="{% url "all-tasks-page" %}">All tasks</a>
             <a href="{% url "archived-tasks-page" %}">Archive</a>
         </nav>
         <form method="POST">
+            <div class="form-data-enter">
             {% csrf_token %}
             {{ form }}
-            <button>Add task</button>
+            </div>
+            <div class="data-submit">
+                <button>Add task</button>
+            </div>
         </form>
         <ul>
         {% for task in tasks%}
             <li>
-                <a href="{% url "complete-task-page" task.id %}">{{ task.task_text }}</a>
+                <a class="{% if task.is_done %} strikethrough {% endif %}" href="{% url "complete-task-page" task.id %}">{{ task.task_text }}</a>
                 <div class="task-buttons">
                     <a href="{% url "task-detail-page" task.id %}">Edit</a>
                     <a href="{% url "move-to-archive-page" task.id%}">Archive</a>

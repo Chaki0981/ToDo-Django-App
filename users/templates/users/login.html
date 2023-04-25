@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css_files%}
+    <link rel="stylesheet" href="{% static "todo/index.css" %}">
+{% endblock %}
+
+{% block content %}
+    <div class="main-box">
+        <form method="POST">
+            {% csrf_token %}
+            <label>Username</label>
+            <input type="text" name="username">
+            <label>Password</label>
+            <input type="password" name="password">
+            <button>Login</button>
+        </form>
+{% endblock %}

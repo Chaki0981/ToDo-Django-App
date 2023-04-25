@@ -10,18 +10,17 @@
     <link rel="stylesheet" href="{% static "base.css" %}">
     {% block css_files%}{%endblock%}
 <body>
-    {% comment %} <header id="upper-toolbar">
-        <nav id="main-toolbar">
-            <div>
+    <header>
+        <nav class="upper-toolbar">
                 {% if user.is_authenticated %}
+                    <span>Hi {{ user.username | title }}!</span>
                     <a href="{% url "logout-page" %}">Logout</a>
                 {% else%}
                     <a href="{% url "register-page" %}">Register</a>
                     <a href="{% url "login-page" %}">Login</a>
                 {% endif %}
-            </div>
         </nav>
-    </header> {% endcomment %}
+    </header>
 
         {% block content %}{% endblock %}
 </body>

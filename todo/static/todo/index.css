@@ -1,19 +1,21 @@
 .main-box {
-    background-color: white;
+    background-color: hsl(216, 50%, 16%);
     width: 400px;
-    margin: 0 auto 0 auto;
+    margin: 150px auto 0 auto;
     border-radius: 10px;
+    box-shadow: 0 0 50px hsl(215, 93%, 5%);
 }
 
-nav {
+.navigation-bar {
     display: flex;
     justify-content: space-between;
-    box-shadow: 0 0 2px #555454;
+    border-bottom: 2px solid #555454;
     margin-bottom: 10px;
 }
 
 nav a {
     padding: 5px 10px 5px 10px;
+    border-radius: 5px;
 }
 
 ul {
@@ -33,6 +35,35 @@ ul li {
 
 a {
     text-decoration: none;
+    color: hsl(0, 0%, 100%);
+}
+
+form {
+    display: flex;
+    justify-content: space-between;
+}
+
+form label {
+    color: hsl(0, 0%, 100%);
+    padding-left: 10px;
+}
+
+form button {
+    margin-right: 10px;
+}
+
+.enter-data {
+    display: flex;
+    justify-content: space-between;
+}
+
+.data-submit {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.strikethrough {
+    text-decoration: line-through;
 }
 
 .task-buttons {

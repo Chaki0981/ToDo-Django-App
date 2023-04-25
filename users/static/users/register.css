@@ -1,0 +1,48 @@
+.main-box {
+    background-color: hsl(216, 50%, 16%);
+    width: 400px;
+    margin: 150px auto 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 0 50px hsl(215, 93%, 5%);
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    padding-top: 10px;
+}
+
+label {
+    color: white;
+}
+
+ul {
+    padding: 0;
+}
+
+li {
+    padding: 10px;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+.help-text {
+    color: white;
+    padding: 5px 10px 5px 10px;
+}
+.help-text li {
+    padding-left: 0px;
+}
+
+.button-control {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.button-control button {
+    width: 130px;
+    height: 40px;
+    font-size: large;
+}

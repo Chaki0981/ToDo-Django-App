@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css_files%}
+    <link rel="stylesheet" href="{% static "todo/index.css" %}">
+{% endblock %}
+
+{% block content %}
+    <div class="main-box">
+        <h1>You have to log in in order to add tasks.</h1>
+    </div>
+{% endblock %}
